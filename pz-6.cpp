@@ -5,44 +5,44 @@ using namespace std;
 
 template <typename T>
 class smartpointer {
-T* p;
-public:
-smartpointer(T* tp) {
-p = tp;
-}
-~smartpointer() {
-delete p;
-}
-T* operator->() {
-return p;
-}
+  T* p;
+  public:
+  smartpointer(T* tp) {
+    p = tp;
+  }
+  ~smartpointer() {
+    delete p;
+  }
+  T* operator->() {
+   return p;
+  }
 
 };
 
 class ball {
-int x;
-int y;
-public:
-ball(int tx, int ty) {
-x = tx;
-y = ty;
-}
-void setball(int tx, int ty) {
-x = tx;
-y = ty;
-}
-int getx() {
-return x;
-}
-int gety() {
-return y;
-}
-void show() {
-cout « "x is " « x « endl;
-cout « "y is " « y « endl;
-}
+  int x;
+  int y;
+  public:
+  ball(int tx, int ty) {
+    x = tx;
+    y = ty;
+  }
+  void setball(int tx, int ty) {
+    x = tx;
+    y = ty;
+  }
+  int getx() {
+   return x;
+  }
+  int gety() {
+    return y;
+  }
+  void show() {
+    cout Â« "x is " Â« x Â« endl;
+    cout Â« "y is " Â« y Â« endl;
+   }
 };
 int main() {
-smartpointer<ball> b(new ball(3, 4));
-b->show();
+  smartpointer<ball> b(new ball(3, 4));
+  b->show();
 }
